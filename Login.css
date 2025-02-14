@@ -1,0 +1,43 @@
+.login{
+    width: 400px;
+    margin: 150px auto;
+    padding:2cqi;
+    background-color: black;
+    color:white;
+    text-align: center;
+    border-radius: 10px;
+
+}
+input{
+    width: 90%;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.submit{
+    width: 70%;
+    padding: 10px;
+    background: #007bff;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+@media (max-width: 768px) {
+    input {
+      width: 50%;
+    }
+    button{
+      width: 50%;
+    }
+
+    .login{
+        width: 60%;
+  
+      }
+      }
+  
