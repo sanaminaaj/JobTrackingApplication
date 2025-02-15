@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
-import {auth} from "./Firebase";
 import {createUserWithEmailAndPassword} from "firebase/auth";
+import { doc, setDoc } from "firebase/firestore";
+import { db, auth } from "./Firebase";
+
 import "./Register.css";
 import { toast,ToastContainer } from "react-toastify";
 
@@ -9,8 +11,8 @@ const Register = () => {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
+    role:"user"
   });
-
 
   // Handle input change
   const handleChange = (e) => {
@@ -21,7 +23,13 @@ const Register = () => {
   const handleSubmit = async(e) => {
     e.preventDefault();
     try{
-      await createUserWithEmailAndPassword(auth,formData.email,formData.password);
+      const userCredential=await createUserWithEmailAndPassword(auth,formData.email,formData.password);
+      const user=userCredential.user;
+      await setDoc(doc(db, "users", user.uid), {
+        email: formData.email,
+        role: formData.role,  // 'company' or 'job-seeker'
+      });
+      setFormData({email:"",password:"",role:"user"})
       toast.success("successful", { autoClose: 3000 });
     }
     catch(err){
@@ -53,6 +61,11 @@ const Register = () => {
           required
         />
         <br />
+        <select onChange={handleChange} name="role" value={formData.role}>
+          <option value="user">User</option>
+          <option value="company">Company</option>
+        </select>
+        
         <button type="submit" className="submit">Sign Up</button>
         <p>Already Registered? <Link to="/login">Login</Link></p>
       </form>

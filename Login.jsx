@@ -1,10 +1,13 @@
 import React,{useState} from 'react'
 import "./Login.css"
-import {auth} from "./Firebase";
+import {auth,db} from "./Firebase";
 import {signInWithEmailAndPassword} from "firebase/auth";
+import {doc,getDoc} from "firebase/firestore"
 import { Link } from 'react-router-dom';
 import { toast,ToastContainer } from "react-toastify";
+import { useNavigate } from 'react-router-dom';
 export default function Login() {
+  const nav=useNavigate();
     const [formData, setFormData] = useState({
       email: "",
       password: "",
@@ -16,6 +19,16 @@ export default function Login() {
       e.preventDefault();
           try{
             await signInWithEmailAndPassword(auth,formData.email,formData.password);
+            const user = auth.currentUser;
+            if (user) {
+              const userDoc = await getDoc(doc(db, "users", user.uid));
+              if (userDoc.exists() && userDoc.data().role === "company") {
+                nav("/admin")
+              }
+              else if(userDoc.exists() && userDoc.data().role === "user"){
+                nav("/displayJob");
+              }
+            }
             toast.success("login successful", { autoClose: 3000 });
           }
           catch(err){
