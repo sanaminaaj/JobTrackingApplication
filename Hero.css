@@ -1,0 +1,17 @@
+.hero-container {
+    text-align: center;
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    color: white;
+    padding: 50px;
+    margin-top:  100px;
+  }
+  
+  .explore-btn {
+    padding: 10px 20px;
+    background: white;
+    color: #4facfe;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  

@@ -4,7 +4,9 @@ import { auth } from "./Firebase";
 import { signOut } from "firebase/auth";
 import "./Navbar.css";
 import Login from "./Login";
-
+import Hero from "./Hero";
+import Footer from "./Footer";
+import Features from "./Features";
 const Home = () => {
   const navigate = useNavigate();
 
@@ -31,6 +33,10 @@ const Home = () => {
           </button>
         </div>
       </nav>
+      <Hero />
+      <Features />
+      <Footer />
+  
     </>
   );
 };

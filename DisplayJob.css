@@ -28,7 +28,15 @@
     color: #2c3e50;
     margin-bottom: 5px;
   }
-  
+  .view-applied-btn{
+    margin-top: 30px;
+    background-color: #FFD700;
+    color:white;
+    width: 30%;
+    border-radius: 3px;
+    border: 2px solid black;
+    cursor: pointer;
+  }
   /* Job Title & Salary */
   .job div {
     display: flex;

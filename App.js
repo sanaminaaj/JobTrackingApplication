@@ -6,21 +6,27 @@ import Job from "./Job";
 import DisplayJob from "./DisplayJob";
 import Admin from "./Admin";
 import Home from "./Home";
+import AppliedJobs from "./AppliedJob";
+import Hero from "./Hero";
+import Features from "./Features";
+import Footer from "./Footer";
+
 function App() {
   return (
-    <div>
-    <Router>
-    <Home /> 
+      <div>
+        <Router>
 
-    <Routes>
-      <Route path="/register" element={<Register></Register>}></Route>
-      <Route path="/login" element={<Login></Login>}></Route>
-      <Route path="/job" element={<Job></Job>}></Route>
-      <Route path="/displayJob" element={<DisplayJob></DisplayJob>}></Route>
-      <Route path="/admin" element={<Admin></Admin>}></Route>
-    </Routes>
-    </Router>
-    </div>
+        <Routes>
+          <Route path="/" element={<Home />} /> 
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/job" element={<Job />} />
+          <Route path="/displayJob" element={<DisplayJob />} />
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/applied-jobs" element={<AppliedJobs />} />
+        </Routes>
+        </Router>
+      </div>
   );
 }
 

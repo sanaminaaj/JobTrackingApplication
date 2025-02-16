@@ -1,0 +1,21 @@
+
+.features-container {
+    text-align: center;
+    padding: 40px;
+  }
+  
+  .features-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .feature-card {
+    background: black;
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    color: white;
+    margin-bottom: 100px;
+  }
+  
