@@ -1,11 +1,19 @@
 .footer {
-  width: 100%;
-  background-color: #333;
-  color: white;
   text-align: center;
-  padding: 10px;
-  position: fixed;
-  bottom: 0;
-  left: 0;
+  padding: 20px 10px;
+  background-color: #1f2937; /* dark gray */
+  color: #ffffff;
+  font-size: 14px;
+  width:100%;
+  left:0;
+  margin-top: auto; /* helps push it to the bottom in flex layout */
 }
-  
+
+.footer a {
+  color: #60a5fa; /* soft blue */
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}

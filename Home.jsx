@@ -3,9 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { auth } from "./Firebase";
 import { signOut } from "firebase/auth";
 import "./Navbar.css";
-import Login from "./Login";
 import Hero from "./Hero";
-import Footer from "./Footer";
 import Features from "./Features";
 const Home = () => {
   const navigate = useNavigate();
@@ -35,7 +33,6 @@ const Home = () => {
       </nav>
       <Hero />
       <Features />
-      <Footer />
   
     </>
   );
